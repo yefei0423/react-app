@@ -1,0 +1,6 @@
+FROM node:12 AS build
+WORKDIR /app/react-app
+COPY package* yarn.lock ./
+COPY public ./public
+COPY src ./src
+RUN yarn install && yarn run build
